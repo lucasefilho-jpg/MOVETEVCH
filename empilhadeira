@@ -1,0 +1,71 @@
+create database empilhadeira;
+use empilhadeira;
+
+create table componentes_eletricos (
+    id_componentes_eletricos int auto_increment primary key,
+    nome varchar(100) not null,
+    quantidade int not null,
+    funcao text
+);
+
+insert into componentes_eletricos
+(id_componentes_eletricos, nome, quantidade, funcao)
+values
+(1, 'ESP32 DEVKIT V1', 1, 'Controlar e processar as operacoes da empilhadeira'),
+(2, 'Ponte H', 1, 'Controla os motores DC, permitindo alterar o sentido de rotacao e a velocidade.'),
+(3, 'Sensor Ultrassonico HC-SR04', 1, 'Mede distancias e detecta obstaculos para auxiliar na seguranca da empilhadeira.'),
+(4, 'Sensor DHT22', 1, 'Mede a temperatura e a umidade do ambiente.'),
+(5, 'Kit Modulo RFID RC522', 1, 'Realiza a leitura de cartoes e tags RFID por aproximacao para identificacao.');
+create table atuadores (
+    id_atuadores int auto_increment primary key,
+    nome varchar(100) not null,
+    quantidade int not null,
+    funcao text
+);
+
+insert into atuadores
+(id_atuadores, nome, quantidade, funcao)
+values
+(1, 'Motores 6V com Caixa de Reducao', 2, 'Gerar movimento e torque para a empilhadeira.'),
+(2, 'Servo Motor MG90D 360 graus', 1, 'Realizar movimentos controlados e rotacao continua.'),
+(3, 'Buzzer Passivo 5V', 1, 'Emitir sinais sonoros para indicar alertas e avisos durante o funcionamento da empilhadeira.');
+
+create table alimentacoes_e_conexoes (
+    id_alimentacoes_e_conexoes int auto_increment primary key,
+    nome varchar(100) not null,
+    quantidade int not null,
+    funcao text
+);
+
+insert into alimentacoes_e_conexoes
+(id_alimentacoes_e_conexoes, nome, quantidade, funcao)
+values
+(1, 'Bateria Alcalina 9 V Duracell', 1, 'Fornecer energia eletrica ao sistema.'),
+(2, 'Fios Condutores Jumper M/F', 1, 'Realizar conexoes entre placas, modulos e componentes.'),
+(3, 'Rabicho de Bateria', 1, 'Conectar a bateria ao circuito eletrico.'),
+(4, 'Resistor 100 ohms 1/4 W', 1, 'Limitar a corrente eletrica e proteger os LEDs.');
+
+create table componentes_mecanicos (
+    id_componentes_mecanicos int auto_increment primary key,
+    nome varchar(100) not null,
+    quantidade int not null,
+    funcao text
+);
+
+insert into componentes_mecanicos 
+(id_componentes_mecanicos,nome,quantidade, funcao)
+values 
+(1, 'Chass', 4, 'Estrutura principal do projeto, responsavel por sustentar e acomodar os componentes mecanicos.'),
+(2, 'engrenagem', 2, 'Realizar a transmissao de movimento rotativo por meio do contato entre dentes.'),
+(3, 'Espacador do servo', 1, 'Manter a distancia adequada entre o servo motor e os demais componentes.'),
+(4, 'Espassador do trilho', 2, 'Manter o espacamento e o alinhamento dos componentes do trilho.'),
+(5, 'Garfo', 2, 'Auxiliar na sustentacao, conexao e movimentacao de componentes do mecanismo.'),
+(6, 'Guia do suporte do garfo', 2, 'Orientar o posicionamento e o deslocamento do suporte do garfo.'),
+(7, 'Lamina de folga', 1, 'Ajustar as folgas entre as pecas, evitando interferencias e desalinhamentos.'),
+(8, 'Placa de fixacao', 1, 'Fixar e sustentar componentes na estrutura do conjunto.'),
+(9, 'pneu', 2, 'Proporcionar contato com o solo e aderência durante a movimentação.'), 
+(10, 'roda', 2, 'Permitir o deslocamento do mecanismo por meio de movimento rotativo.'),
+(11, 'supore do garfo', 2, 'Sustentar e manter o garfo fixado na posição correta.'),
+(12, 'suporte do servo motor', 1, 'Acomodar e fixar o servo motor à estrutura do projeto.'),
+(13, 'trava do motor', 1, 'Impedir deslocamentos indesejados do motor, mantendo-o fixo.'),
+(14, 'trava do servo motor', 1, 'Garantir a fixação e a estabilidade do servo motor.');
